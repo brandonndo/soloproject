@@ -13,6 +13,7 @@ module.exports = {
         // will auto create once we npm run build
         // publicPath: '/' 
     },
+
     plugins: [
         new HTMLWebpackPlugin({
             title: 'Development',
@@ -33,6 +34,7 @@ module.exports = {
             },
         ],
     },
+
     target: 'web',
     devServer: {
         host: 'localhost',
@@ -45,23 +47,7 @@ module.exports = {
             directory: path.resolve(__dirname, 'public')
         },
         proxy: {
-            '/': 'http//localhost:3000'
-            // change later depending on 
-            /*
-            proxy: {
-            '/': 'http://localhost:3000/',
-}
-proxy: {
-            '/': 'http://localhost:3000/',
-          '/'home: 'http://localhost:3000/',
-}
-We need to set the proxy setting within devServer in webpack.config.js. 
-Search the documentation. The proxy setting allows the request for /api/leaders, 
-which would normally be for the domain localhost:8080, to be instead made for 
-the domain localhost:3000. Thus, instead of the request for /api/leaders being 
-made to localhost:8080/api/leaders, the request for /api/leaders is made 
-to localhost:3000/api/leaders.
-            */
+            '/': 'http://localhost:3000'
         },
     }, 
     resolve: {
