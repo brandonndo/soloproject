@@ -3,11 +3,11 @@ import './stylesheets/login.css';
 const Login = () => {
 
     return <div>
-        Form
+        {/* Form
         Username:
         Password:
         Button
-        http://localhost:3000/getUser
+        http://localhost:3000/getUser */}
     </div>
 };
 

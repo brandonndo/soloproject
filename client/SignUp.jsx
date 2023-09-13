@@ -3,12 +3,12 @@ import './stylesheets/signup.css';
 const SignUp = () => {
 
     return <div>
-        Form
+        {/* Form
         Name:
         Username:
         Password:
         Button
-        http://localhost:3000/signUp
+        http://localhost:3000/signUp */}
     </div>
 };
 

@@ -15,25 +15,25 @@ mongoose.connect(
     ).catch(function (err) {
         console.log(err);
     })
-
+// can refactor to include each controller and model -> controller for logic, model for res.status().json(res...)
+// in postman: post req http://localhost:3000/getUser -> input username/login and password -> get rest of data 
 app.post('/getUser', (req, res) => {
     const userData = req.body
     UserModel.find(userData).then(users => {
-        res.json(users); // Send the found users as a JSON response
+        res.json(users); 
       })
       .catch(err => {
-        res.status(500).json({ error: err.message }); // Handle errors and send an error response
+        res.status(500).json({ error: err.message }); 
       });
 });
 
 app.post('/signUp', (req, res) => {
-    // what should happen here on successful sign up?
     const userData = req.body
     UserModel.create(userData).then(response => {
         res.json(response);
     })
     .catch(err => {
-        res.status(500).json({ error: err.message }); // Handle errors and send an error response
+        res.status(500).json({ error: err.message }); 
     })
   });
 
@@ -48,23 +48,22 @@ app.post('/addHabit', (req, res) => {
         res.json(response);
     })
     .catch(err => {
-        res.status(500).json({ error: err.message }); // Handle errors and send an error response
+        res.status(500).json({ error: err.message }); 
     })
 })
 
+// post req http://localhost:3000/getHabits -> input user -> get all habits
 app.post('/getHabits', (req, res) => {
     const habitData = req.body
     // you combine habitData with name
     habitData['user'] = name;
     HabitModel.find(habitData).then(habits => {
-        res.json(habits); // Send the found users as a JSON response
+        res.json(habits); 
       })
       .catch(err => {
-        res.status(500).json({ error: err.message }); // Handle errors and send an error response
+        res.status(500).json({ error: err.message }); 
       });
 });
-
-// app.post()
 
 
 app.listen(3000, () => {
