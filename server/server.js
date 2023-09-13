@@ -2,10 +2,22 @@
 const express = require('express');
 const app = express()
 const mongoose = require('mongoose');
+const UserModel = require('./models/users')
 
-mongoose.connect("mongodb+srv://brandondo:q29o00G4he70xi48@cluster0.arxquxp.mongodb.net/bdoSoloProject?retryWrites=true&w=majority")
+app.use(express.json());
 
-// const PORT = 3000;
+mongoose.connect(
+    "mongodb+srv://brandondo:q29o00G4he70xi48@cluster0.arxquxp.mongodb.net/bdoSoloProject?retryWrites=true&w=majority"
+    );
+
+app.get('/getUsers', (req, res) => {
+    UserModel.find({}, (err, result) => {
+        
+    })
+});
+
+app.post()
+
 
 app.listen(3000, () => {
     console.log(`SERVER RUNNING!`);
