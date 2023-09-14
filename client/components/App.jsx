@@ -4,7 +4,11 @@ import MyHabits from '../components/MyHabits';
 import SignUp from '../components/SignUp';
 import Login from '../components/Login';
 import '../stylesheets/styles.css';
+import { Provider } from "react-redux";
 
+
+// <Provider store={store}>
+// </Provider>
 
 const App = () => {
 
@@ -15,6 +19,7 @@ const App = () => {
             <Route path ='/habits' element={<MyHabits/>} />
             <Route path = '/signup' element={<SignUp/>} />
         </Routes>
+      
         </> 
     )
 };

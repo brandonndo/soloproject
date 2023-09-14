@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useState }from 'react';
 import styled from 'styled-components';
-import { createSlice } from '@reduxjs/toolkit'
+import { useDispatch } from 'react-redux';
+import { ADD_CARD } from '../actions/actions';
 
+
+
+// STYLING ---------------------------------------
 
 // #85BCA4 sage green
 // #008080
@@ -11,28 +15,68 @@ const MainContainer = styled.div`
     padding-left: 30px;
     padding-top: 20px;
     padding-bottom: 20px;
-`
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, .2)
+`;
 const Title = styled.div`
     font-size:  50px;
     color: #e9ffe1;
 `;
-
 const HeaderContainer = styled.div`
     margin-right: 20px;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
     flex-direction: column
-   
-`
-
-// padding-top: 15px;
-// padding-bottom: 10px
-
-const HeaderItem = styled.div`
-    color: #e9ffe1
     
 `
+const HeaderItem = styled.div`
+    color: #e9ffe1  
+`
+
+const HabitTitle = styled.div`
+    display: fixed
+`
+const HabitsContainer = styled.div`
+
+padding-left: 50px;
+padding-right: 50px
+padding-top: 100px;
+padding-bottom: 800px;
+    margin: 15px auto;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, .2)
+`
+// COMPONENTS/ACTIONS ---------------------------------------
+
+// const AddCard = () => {
+//     const [cardText, setCardText] = useState(''); // State for the card text
+//     const dispatch = useDispatch();
+  
+//     const handleAddCard = () => {
+//       // Dispatch an action to add the card to your Redux store
+//       if (cardText.trim() !== '') {
+//         dispatch({ type: ADD_CARD, payload: cardText });
+//         setCardText(''); // Clear the input field
+//       }
+//     };
+  
+//     return (
+//       <div>
+//         <input
+//           type="text"
+//           value={cardText}
+//           onChange={(e) => setCardText(e.target.value)}
+//           placeholder="Enter card text"
+//         />
+//         <button onClick={handleAddCard}>Add Card</button>
+//       </div>
+//     );
+//   };
+  
+{/* <div className = 'container'>
+<div className = 'innerBox'> 
+</div>
+</div> */}
+// RENDERING ---------------------------------------
 
 const MyHabits = () => {
     return (
@@ -44,6 +88,16 @@ const MyHabits = () => {
                 <HeaderItem>Logout</HeaderItem>
             </HeaderContainer>
         </MainContainer>
+
+       
+        <HabitsContainer>
+    
+            <HabitTitle>
+                Habits
+            </HabitTitle>
+        
+        </HabitsContainer>
+           
     </>
     )
 }
@@ -54,58 +108,3 @@ export default MyHabits;
                         
      
 
-// const GridContainer = styled.div`
-//     display: grid;
-//     min-height: 100;
-//     grid-template-column: 50%;
-//     grid-template-rows: 1fr
-// `;
-// const NavContainer = styled.div`
-//     grid-area: nav;
-//     padding-top: 10px;
-//     padding-left: 100px;
-//     background-color: #008080;
-// `;
-
-// const MainContainer = styled.div`
-//     display: flex;
-// `;
-
-// const Title = styled.div`
-//     font-size:  30px;
-//     margin-bottom: 100px;
-//     color: #e9ffe1
-// `;
-
-// const HeaderContainer = styled.div`
-//     display: flex;
-//     justify-content: flex-end;
-//     align-items: center;
-//     color: #e9ffe1
-// `;
-
-// const HeaderItem = styled.div`
-//     padding-right: 50px;
-//     :last-child{
-//         padding: 0
-//     }
-//     font-size: 18px
-// `
-
-// const MyHabits = () => {
-//     return (
-//         <GridContainer>
-//             grid
-//             <NavContainer>nav
-//                 <Title>Accomplish.</Title>
-//             </NavContainer>
-//                 <MainContainer>  
-//                     main
-//                     <HeaderContiner>
-//                         <HeaderItem>Your Progress</HeaderItem>
-//                         <HeaderItem>Logout</HeaderItem>  
-//                     </HeaderContiner>    
-//                 </MainContainer>
-//         </GridContainer>
-//     )
-// }

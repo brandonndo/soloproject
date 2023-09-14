@@ -1,6 +1,7 @@
 import React from "react";
 import '../stylesheets/signup.css';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 
 const LoginContainer = styled.div`
     text-align: center;
@@ -39,6 +40,8 @@ const SubmitButton = styled.input`
 `;
 
 const SignUp = () => {
+    const navigate = useNavigate();
+    
     const handleSubmit = (event) => {
         event.preventDefault(); // Prevent the default form submission
 
@@ -67,13 +70,15 @@ const SignUp = () => {
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
-            }
+            } 
+            navigate('/')
             return response.json();
         })
-        .then(data => {
-            // Handle the API response data here
-            console.log(data);
-        })
+        // .then(data => {
+        //     // Handle the API response data here
+        //     // navigate('/')
+        //     console.log(data);
+        // })
         .catch(error => {
             // Handle any errors that occurred during the fetch
             console.error('There was a problem with the fetch operation:', error);

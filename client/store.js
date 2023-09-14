@@ -1,9 +1,10 @@
-import { configureStore } from '@reduxjs/toolkit'
-import reducers from './reducers/MyHabitSlice'
+import { composeWithDevTools } from 'redux-devtools-extension';
+import reducers from './reducers/index';
 
-export default configureStore({
-    reducer: {
-        habits: reducer,
-        
-    }
-})
+// we are adding composeWithDevTools here to get easy access to the Redux dev tools
+const store = createStore(
+  reducers,
+  composeWithDevTools()
+);
+
+export default store;
