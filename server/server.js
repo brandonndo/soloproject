@@ -4,10 +4,13 @@ const app = express()
 const mongoose = require('mongoose');
 const UserModel = require('./models/users')
 const HabitModel = require("./models/habits")
-
+const cors = require('cors');
 
 app.use(express.json());
 app.use(express.static(path.resolve(__dirname, '../client')));
+// Enable CORS for all routes
+app.use(cors());
+
 
 // catch all route to serve index.html for client facing route
 app.get('*', (req, res) => {
