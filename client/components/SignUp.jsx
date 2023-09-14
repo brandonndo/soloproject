@@ -37,6 +37,10 @@ const SubmitButton = styled.input`
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: opacity 0.3s ease; /* Add opacity transition */
+    &:hover {
+      opacity: 0.8; /* Change opacity on hover */
+    }
 `;
 
 const SignUp = () => {
