@@ -7,34 +7,52 @@ import { createSlice } from '@reduxjs/toolkit'
 // #008080
 // #85BCA4
 const MainContainer = styled.div`
-    display: flex;
     background-color: #008080;
-    justify-content: center;
-    align-items: center;
-    padding-top: 30px;
-    
+    padding-left: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 `
 const Title = styled.div`
     font-size:  50px;
-    margin-bottom: 20%;
-    padding-right: 60%;
-    color: #e9ffe1
+    color: #e9ffe1;
 `;
 
+const HeaderContainer = styled.div`
+    margin-right: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column
+   
+`
 
+// padding-top: 15px;
+// padding-bottom: 10px
+
+const HeaderItem = styled.div`
+    color: #e9ffe1
+    
+`
 
 const MyHabits = () => {
     return (
     <>
         <MainContainer>
             <Title>Accomplish.</Title>
-           
+            <HeaderContainer>
+                <HeaderItem>My Progress</HeaderItem>
+                <HeaderItem>Logout</HeaderItem>
+            </HeaderContainer>
         </MainContainer>
     </>
     )
 }
 export default MyHabits;
 
+                   
+                        
+                        
+     
 
 // const GridContainer = styled.div`
 //     display: grid;
