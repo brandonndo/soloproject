@@ -79,13 +79,21 @@ padding-bottom: 800px;
 // RENDERING ---------------------------------------
 
 const MyHabits = () => {
+    const handleProgressClick = () => {
+        console.log("progress clicked");
+    };
+
+    const handleLogoutClick = () => {
+        console.log("logout clicked");
+    };
+
     return (
     <>
         <MainContainer>
             <Title>Accomplish.</Title>
             <HeaderContainer>
-                <HeaderItem>My Progress</HeaderItem>
-                <HeaderItem>Logout</HeaderItem>
+                <HeaderItem onClick={handleProgressClick}>My Progress</HeaderItem>
+                <HeaderItem onClick={handleLogoutClick}>Logout</HeaderItem>
             </HeaderContainer>
         </MainContainer>
 
