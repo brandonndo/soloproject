@@ -34,7 +34,6 @@ module.exports = {
         ],
     },
 
-
     devServer: {
         host: 'localhost',
         port: '8080',
@@ -46,7 +45,9 @@ module.exports = {
             directory: path.resolve(__dirname, 'public')
         },
         proxy: {
-            '/': 'http://localhost:3000'
+            '/': 'http://localhost:3000', 
+            '/habits': 'http://localhost:3000',
+            '/signup': 'http://localhost:3000', 
         },
     }, 
     resolve: {

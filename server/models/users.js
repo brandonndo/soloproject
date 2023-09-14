@@ -5,7 +5,7 @@ const UsersSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    login: {
+    username: {
         type: String,
         required: true
     },
@@ -15,5 +15,4 @@ const UsersSchema = new mongoose.Schema({
     }
 });
 
-const UserModel = mongoose.model("users", UsersSchema);
-module.exports = UserModel
+module.exports = mongoose.model('users', UsersSchema);

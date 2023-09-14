@@ -1,8 +1,10 @@
 import React from "react";
-import './stylesheets/signup.css';
+import '../stylesheets/signup.css';
+
 const SignUp = () => {
 
     return <div>
+        SignUp page
         {/* Form
         Name:
         Username:
