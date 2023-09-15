@@ -44,11 +44,11 @@ const SubmitButton = styled.input`
     background-color: #008080;
     color: #fff;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    ransition: opacity 0.3s ease; /* Add opacity transition */
+    border-radius: 5px;
+    transition: opacity 0.3s ease; 
     &:hover {
-      opacity: 0.8; /* Change opacity on hover */
+      opacity: 0.8; 
     }
 `;
 

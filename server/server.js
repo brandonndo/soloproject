@@ -98,6 +98,17 @@ app.post('/addHabit', (req, res) => {
     })
 })
 
+app.post('/deleteHabit', (req, res) => {
+    const { username, habit } = req.body
+    HabitModel.deleteOne({username, habit})
+    .then(response => {
+        res.json(response);
+    })
+    .catch(err => {
+        res.status(500).json({ error: err.message }); 
+    })
+})
+
 // post req http://localhost:3000/getHabits -> input user -> get all habits
 // you combine habitData with username
 // habitData['username'] = username;
